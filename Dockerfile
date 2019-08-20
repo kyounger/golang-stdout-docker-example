@@ -1,4 +1,4 @@
-FROM golang AS builder
+FROM golang:1.10 AS builder
 WORKDIR /app
 COPY hello.go ./
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o hello-world .
